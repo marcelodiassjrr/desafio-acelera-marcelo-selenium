@@ -28,4 +28,8 @@ public class LoginPage {
 	public boolean isSecretPage() {
 		return browser.getCurrentUrl().equals("https://www.saucedemo.com/inventory.html");
 	}
+	
+	public boolean isPasswordEmpty() {
+		return browser.findElement(By.xpath("//h3[@data-test='error']")).getText().contains("Epic sadface: Password is required");
+	}
 }

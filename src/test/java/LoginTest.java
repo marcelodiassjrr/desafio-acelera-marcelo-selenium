@@ -35,4 +35,12 @@ public class LoginTest {
 		this.loginPage.login("standard_user", "14289322");
 		assertTrue(!this.loginPage.isSecretPage());
 	}
+	
+	@Test
+	@Step
+	@org.testng.annotations.Test
+	public void naoRealizaLoginSemSenha() {
+		this.loginPage.login("standard_user", "");
+		assertTrue(this.loginPage.isPasswordEmpty());
+	}
 }
