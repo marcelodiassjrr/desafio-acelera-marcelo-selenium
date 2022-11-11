@@ -31,7 +31,7 @@ public class LoginTest {
 	@Test
 	@Step
 	@org.testng.annotations.Test
-	public void naoRealizaLoginComSenhaInválida() {
+	public void naoRealizaLoginComSenhaInvalida() {
 		this.loginPage.login("standard_user", "14289322");
 		assertTrue(!this.loginPage.isSecretPage());
 	}
