@@ -85,7 +85,7 @@
 						<configuration>
 							<filesets>
 								<fileset>
-									<directory>path/to/allure-results</directory>
+									<directory>allure-results</directory>
 								</fileset>
 							</filesets>
 						</configuration>
