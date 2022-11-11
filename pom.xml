@@ -6,6 +6,13 @@
 	<name>DesafioAceleraTech</name>
 
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-clean-plugin -->
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-clean-plugin</artifactId>
+			<version>3.2.0</version>
+		</dependency>
+
 
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-remote-driver -->
 		<dependency>
@@ -65,7 +72,26 @@
 		<!-- put here the path of your test source directory -->
 		<testSourceDirectory>src/test/java</testSourceDirectory>
 		<plugins>
-
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>3.1.0</version>
+				<executions>
+					<execution>
+						<id>clean-allure-results</id>
+						<phase>clean</phase>
+						<goals>
+							<goal>clean</goal>
+						</goals>
+						<configuration>
+							<filesets>
+								<fileset>
+									<directory>path/to/allure-results</directory>
+								</fileset>
+							</filesets>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
