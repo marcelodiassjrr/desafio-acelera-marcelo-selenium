@@ -44,6 +44,9 @@ public class LoginTest {
 		assertTrue(this.loginPage.isPasswordEmpty());
 	}
 	
+	@Test
+	@Step
+	@org.testng.annotations.Test
 	public void naoRealizaLoginComUsuarioInvalido() {
 		this.loginPage.login("invalid_user", "secret_sauce");
 		assertTrue(this.loginPage.isInvalidUser());
