@@ -1,7 +1,10 @@
+package LoginPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+
+import HomePage.ProductsPage;
 
 public class LoginPage {
 	private static final String URL_LOGIN = "https://www.saucedemo.com/";
@@ -19,10 +22,11 @@ public class LoginPage {
 		this.browser.quit();
 	}
 
-	public void login(String user, String password) {
+	public ProductsPage login(String user, String password) {
 		this.browser.findElement(By.id("user-name")).sendKeys(user);
 		this.browser.findElement(By.id("password")).sendKeys(password);
 		this.browser.findElement(By.id("login-button")).click();
+		return new ProductsPage(browser);
 	}
 
 	public boolean isSecretPage() {
