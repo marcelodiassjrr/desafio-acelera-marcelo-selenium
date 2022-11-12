@@ -43,4 +43,9 @@ public class LoginTest {
 		this.loginPage.login("standard_user", "");
 		assertTrue(this.loginPage.isPasswordEmpty());
 	}
+	
+	public void naoRealizaLoginComUsuarioInvalido() {
+		this.loginPage.login("invalid_user", "secret_sauce");
+		assertTrue(this.loginPage.isInvalidUser());
+	}
 }
