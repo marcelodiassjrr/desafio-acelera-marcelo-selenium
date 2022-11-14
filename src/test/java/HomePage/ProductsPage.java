@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
+import CartPage.CartPage;
+
 public class ProductsPage {
 	private WebDriver browser;
 
@@ -12,7 +14,7 @@ public class ProductsPage {
 	}
 
 	public void quit() {
-		//this.browser.quit();
+		this.browser.quit();
 	}
 
 	public void addProductToCart() {
@@ -30,6 +32,11 @@ public class ProductsPage {
 		} catch (NoSuchElementException e) {
 			return false;
 		}
+	}
+	
+	public CartPage openShoppingCart() {
+		this.browser.findElement(By.className("shopping_cart_link")).click();
+		return new CartPage(browser);
 	}
 
 }
