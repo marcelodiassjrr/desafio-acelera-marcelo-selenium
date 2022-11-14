@@ -13,7 +13,7 @@ public class LoginPage {
 	public LoginPage() {
 		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
-		//options.addArguments("--headless");
+		options.addArguments("--headless");
 		this.browser = new ChromeDriver(options);
 		this.browser.navigate().to(URL_LOGIN);
 	}
