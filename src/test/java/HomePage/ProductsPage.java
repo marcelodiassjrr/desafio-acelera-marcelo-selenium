@@ -1,11 +1,10 @@
 package HomePage;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
-
 public class ProductsPage {
-	//private static final String URL_INVENTORY = "https://www.saucedemo.com/inventory.html";
 	private WebDriver browser;
 
 	public ProductsPage(WebDriver browser2) {
@@ -13,7 +12,7 @@ public class ProductsPage {
 	}
 
 	public void quit() {
-		this.browser.quit();
+		//this.browser.quit();
 	}
 
 	public void addProductToCart() {
@@ -21,9 +20,16 @@ public class ProductsPage {
 		this.browser.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
 
 	}
-
+	
+	public void removeProductsFromCart() {
+		this.browser.findElement(By.xpath("//button[@data-test='remove-sauce-labs-backpack']")).click();
+	}
 	public boolean cartHasItems() {
-		return this.browser.findElement(By.className("shopping_cart_badge")).isDisplayed();
+		try {
+			return this.browser.findElement(By.className("shopping_cart_badge")).isDisplayed();
+		} catch (NoSuchElementException e) {
+			return false;
+		}
 	}
 
 }
