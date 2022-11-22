@@ -5,16 +5,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import HomePage.ProductsPage;
+import utils.WebDriverUtil;
 
 public class LoginPage {
 	private static final String URL_LOGIN = "https://www.saucedemo.com/";
 	private WebDriver browser;
+	private WebDriverUtil driver;
 
 	public LoginPage() {
-		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--headless");
-		this.browser = new ChromeDriver(options);
+		driver = new WebDriverUtil();
+		this.browser = this.driver.setUp();
 		this.browser.navigate().to(URL_LOGIN);
 	}
 
