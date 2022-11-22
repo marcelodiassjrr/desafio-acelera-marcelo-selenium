@@ -16,7 +16,6 @@ public class CartTest {
 	
 	@AfterEach
 	public void afterEach() {
-		//this.productsPage.quit();
 		this.cartPage = null;
 		this.productsPage = null;
 	}

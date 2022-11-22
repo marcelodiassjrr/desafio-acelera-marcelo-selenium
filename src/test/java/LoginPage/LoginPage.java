@@ -16,7 +16,7 @@ public class LoginPage {
 	}
 
 	public void quit() {
-		this.browser.quit();
+		this.driver.quit();
 	}
 
 	public ProductsPage login(String user, String password) {

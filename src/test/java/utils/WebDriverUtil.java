@@ -17,4 +17,8 @@ public class WebDriverUtil {
 		this.browser = new ChromeDriver(options);
 		return this.browser;
 	}
+	
+	public void quit() {
+		this.browser.quit();
+	}
 }

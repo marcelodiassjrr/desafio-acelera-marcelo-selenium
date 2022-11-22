@@ -9,8 +9,8 @@ import CartPage.CartPage;
 public class ProductsPage {
 	private WebDriver browser;
 
-	public ProductsPage(WebDriver browser2) {
-		this.browser = browser2;
+	public ProductsPage(WebDriver browser) {
+		this.browser = browser;
 	}
 
 	public void quit() {
